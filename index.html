@@ -107,105 +107,120 @@
       <hr />
       <h1>Rreth Nesh</h1>
       <div class="slideshow">
-        <div class="slide">
-          <img src="pics/highway.jpg" alt="Slide 1" class="slide-image" />
-          <div class="slide-text">
-            <h3>Slide 1 Title</h3>
-            <p>Description for slide 1.</p>
-          </div>
+      <div class="slide">
+        <img src="pics/land1.jpeg" alt="Slide 1" class="slide-image" />
+        <div class="slide-text">
+        <h3>Saktësia</h3>
+        <p>Ofrimi i matjeve dhe të dhënave të sakta, duke siguruar që të gjitha llogaritjet dhe raportet të jenë të sakta dhe të besueshme. Kjo është thelbësore për integritetin e punës sonë.</p>
         </div>
-        <div class="slide">
-          <img src="pics/land1.jpeg" alt="Slide 2" class="slide-image" />
-          <div class="slide-text">
-            <h3>Slide 2 Title</h3>
-            <p>Description for slide 2.</p>
-          </div>
+      </div>
+      <div class="slide">
+        <img src="pics/highway.jpg" alt="Slide 2" class="slide-image" />
+        <div class="slide-text">
+        <h3>Ekspertiza</h3>
+        <p>Ofrimi i njohurive dhe aftësive profesionale në teknika të ndryshme matëse, me një kuptim të thellë të standardeve dhe rregulloreve të industrisë. Kjo ndihmon klientët të ndihen të sigurt për cilësinë e punës që bëhet.</p>
         </div>
-        <div class="slide">
-          <img src="pics/construction.webp" alt="Slide 3" class="slide-image" />
-          <div class="slide-text">
-            <h3>Slide 3 Title</h3>
-            <p>Description for slide 3.</p>
+      </div>
+      <div class="slide">
+        <img src="pics/construction.jpg" alt="Slide 3" class="slide-image" />
+        <div class="slide-text">
+          <h3>Koha</h3>
+          <p>Përfundimi i projekteve brenda afateve të rënë dakord, duke ofruar shërbim efikas pa kompromentuar cilësinë. Dërgimi i rezultateve në kohë është thelbësor për klientët që duhet të vazhdojnë me projektet e tyre.</p>
           </div>
-        </div>
-        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+      </div>
+      <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+      <a class="next" onclick="changeSlide(1)">&#10095;</a>
       </div>
       <style>
+      .container {
+        padding-left: 10%;
+        padding-right: 10%;
+      }
+      .slideshow {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+      }
+      .slide {
+        display: none;
+        align-items: center;
+        margin-bottom: 2rem;
+        flex-direction: column;
+      }
+      .slide-image {
+        height: auto;
+        width: 100%;
+        max-width: 500px;
+        object-fit: cover;
+      }
+      .slide-text {
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+      }
+      .slide-text h3 {
+        margin: 0;
+        font-size: 1.5rem;
+      }
+      .slide-text p {
+        font-size: 1rem;
+      }
+      .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+      .prev {
+        left: 0;
+      }
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.1);
+      }
+      @media (max-width: 768px) {
         .container {
-          padding-left: 10%;
-          padding-right: 10%;
-        }
-        .slideshow {
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          margin-top: 2rem;
-        }
-        .slide {
-          display: none;
-          align-items: center;
-          margin-bottom: 2rem;
-        }
-        .slide-image {
-          height: 400px;
-          width: 500px;
-          object-fit: cover;
-        }
-        .slide-text {
-          width: 50%;
-          padding-left: 2rem;
+        padding-left: 5%;
+        padding-right: 5%;
         }
         .slide-text h3 {
-          margin: 0;
-          font-size: 2rem;
+        font-size: 1.2rem;
         }
         .slide-text p {
-          font-size: 1.2rem;
+        font-size: 0.9rem;
         }
-        .prev, .next {
-          cursor: pointer;
-          position: absolute;
-          top: 50%;
-          width: auto;
-          padding: 16px;
-          margin-top: -22px;
-          color: rgb(0, 0, 0);
-          font-weight: bold;
-          font-size: 18px;
-          transition: 0.6s ease;
-          border-radius: 0 3px 3px 0;
-          user-select: none;
-        }
-        .prev {
-          left:0;
-        }
-        .next {
-          right: 0;
-          border-radius: 3px 0 0 3px;
-        }
-        .prev:hover, .next:hover {
-          background-color: rgba(0,0,0,0.1);
-        }
+      }
       </style>
       <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-  
-        function changeSlide(n) {
-          showSlides(slideIndex += n);
+      let slideIndex = 1;
+      showSlides(slideIndex);
+    
+      function changeSlide(n) {
+        showSlides(slideIndex += n);
+      }
+    
+      function showSlides(n) {
+        let slides = document.getElementsByClassName("slide");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
         }
-  
-        function showSlides(n) {
-          let slides = document.getElementsByClassName("slide");
-          if (n > slides.length) {slideIndex = 1}
-          if (n < 1) {slideIndex = slides.length}
-          for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-          }
-          slides[slideIndex - 1].style.display = "flex";
-        }
+        slides[slideIndex - 1].style.display = "flex";
+      }
       </script>
     </div>
     <div id="services" class="container" style="padding-top: 5%;">
