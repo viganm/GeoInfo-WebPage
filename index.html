@@ -85,7 +85,7 @@
       </div>
       <div class="nav-links">
         <a href="#about">Rreth Nesh</a>
-        <a href="#services">Shërbimet tona</a>
+        <a href="#services">Shërbimet Tona</a>
         <a href="#contact">Kontakto</a>
       </div>
     </nav>
@@ -103,115 +103,200 @@
         <p>Partneri juaj i Besueshëm ne Inxhinieri.</p>
       </div>
     </div>
-    <div id="about" class="container">
-    </div>
-    <div class="slideshow">
-      <div class="slide">
-        <img src="pics/highway.jpg" alt="Slide 1" class="slide-image" />
-        <div class="slide-text">
-          <h3>Slide 1 Title</h3>
-          <p>Description for slide 1.</p>
+    <div id="about" class="container" style="padding-top: 10%;">
+      <hr />
+      <h1>Rreth Nesh</h1>
+      <div class="slideshow">
+        <div class="slide">
+          <img src="pics/highway.jpg" alt="Slide 1" class="slide-image" />
+          <div class="slide-text">
+            <h3>Slide 1 Title</h3>
+            <p>Description for slide 1.</p>
+          </div>
         </div>
-      </div>
-      <div class="slide">
-        <img src="pics/land1.jpeg" alt="Slide 2" class="slide-image" />
-        <div class="slide-text">
-          <h3>Slide 2 Title</h3>
-          <p>Description for slide 2.</p>
+        <div class="slide">
+          <img src="pics/land1.jpeg" alt="Slide 2" class="slide-image" />
+          <div class="slide-text">
+            <h3>Slide 2 Title</h3>
+            <p>Description for slide 2.</p>
+          </div>
         </div>
-      </div>
-      <div class="slide">
-        <img src="pics/construction.webp" alt="Slide 3" class="slide-image" />
-        <div class="slide-text">
-          <h3>Slide 3 Title</h3>
-          <p>Description for slide 3.</p>
+        <div class="slide">
+          <img src="pics/construction.webp" alt="Slide 3" class="slide-image" />
+          <div class="slide-text">
+            <h3>Slide 3 Title</h3>
+            <p>Description for slide 3.</p>
+          </div>
         </div>
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
       </div>
-      <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-      <a class="next" onclick="changeSlide(1)">&#10095;</a>
-    </div>
-    <style>
-      .container {
-        padding-left: 10%;
-        padding-right: 10%;
-      }
-      .slideshow {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 2rem;
-      }
-      .slide {
-        display: none;
-        align-items: center;
-        margin-bottom: 2rem;
-      }
-      .slide-image {
-        height: 400px;
-        width: 500px;
-        object-fit: cover;
-      }
-      .slide-text {
-        width: 50%;
-        padding-left: 2rem;
-      }
-      .slide-text h3 {
-        margin: 0;
-        font-size: 2rem;
-      }
-      .slide-text p {
-        font-size: 1.2rem;
-      }
-      .prev, .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        width: auto;
-        padding: 16px;
-        margin-top: -22px;
-        color: rgb(0, 0, 0);
-        font-weight: bold;
-        font-size: 18px;
-        transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
-        user-select: none;
-      }
-      .prev {
-        left:0;
-      }
-      .next {
-        right: 0;
-        border-radius: 3px 0 0 3px;
-      }
-      .prev:hover, .next:hover {
-        background-color: rgba(0,0,0,0.1);
-      }
-    </style>
-    <script>
-      let slideIndex = 1;
-      showSlides(slideIndex);
-
-      function changeSlide(n) {
-        showSlides(slideIndex += n);
-      }
-
-      function showSlides(n) {
-        let slides = document.getElementsByClassName("slide");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (let i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
+      <style>
+        .container {
+          padding-left: 10%;
+          padding-right: 10%;
         }
-        slides[slideIndex - 1].style.display = "flex";
-      }
-    </script>
-    <div id="services" class="container">
-      <h2>Shërbimet tona</h2>
-      <p>Informacion rreth shërbimeve tona...</p>
+        .slideshow {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 2rem;
+        }
+        .slide {
+          display: none;
+          align-items: center;
+          margin-bottom: 2rem;
+        }
+        .slide-image {
+          height: 400px;
+          width: 500px;
+          object-fit: cover;
+        }
+        .slide-text {
+          width: 50%;
+          padding-left: 2rem;
+        }
+        .slide-text h3 {
+          margin: 0;
+          font-size: 2rem;
+        }
+        .slide-text p {
+          font-size: 1.2rem;
+        }
+        .prev, .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          width: auto;
+          padding: 16px;
+          margin-top: -22px;
+          color: rgb(0, 0, 0);
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+        }
+        .prev {
+          left:0;
+        }
+        .next {
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+          background-color: rgba(0,0,0,0.1);
+        }
+      </style>
+      <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+  
+        function changeSlide(n) {
+          showSlides(slideIndex += n);
+        }
+  
+        function showSlides(n) {
+          let slides = document.getElementsByClassName("slide");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          slides[slideIndex - 1].style.display = "flex";
+        }
+      </script>
+    </div>
+    <div id="services" class="container" style="padding-top: 10%;">
+      <hr />
+      <h1>Shërbimet Tona</h1>
+      <style>
+        .services-slider {
+          display: flex;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          gap: 1rem;
+          padding: 2rem 0;
+        }
+        .service-card {
+          flex: 0 0 auto;
+          scroll-snap-align: start;
+          background-color: #fff;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          width: 300px;
+          padding: 1rem;
+          text-align: center;
+        }
+        .service-card img {
+          width: 100%;
+          border-radius: 10px 10px 0 0;
+        }
+        .service-card h3 {
+          margin: 1rem 0 0.5rem;
+          font-size: 1.5rem;
+        }
+        .service-card p {
+          font-size: 1rem;
+          color: #666;
+        }
+      </style>
+      
+      <div class="services-slider">
+        <div class="service-card">
+          <h3>Sondazhe dhe Matje për Pronat</h3>
+          <p>Matje Kufitare: Përcaktojmë vijat kufitare të pronës dhe zgjidhim mosmarrëveshjet kufitare.</p>
+          <p>Matje Topografike: Hartojmë konturet dhe veçoritë e tokës për planifikim dhe projektim.</p>
+          <p>Sondazhe ALTA/NSPS për Tituj Pronësorë: Sigurojmë informacion të detajuar për pronën për qëllime sigurimi të titullit.</p>
+          <p>Ndarje Parcelash: Ndihmojmë në ndarjen e tokës në parcela për zhvillim ose shitje.</p>
+        </div>
+        <div class="service-card">
+          <h3>Sondazhe Ndërtimi</h3>
+          <p>Vendosje dhe Piketim i Terrenit: Shenjojmë vendet për ndërtesa, rrugë dhe instalime bazuar në planet e projektimit.</p>
+          <p>Matje As-Built: Dokumentojmë vendndodhjen e strukturave të përfunduara për regjistrim dhe përputhshmëri.</p>
+          <p>Matje Monitoruese: Ndjekim lëvizjet ose ndryshimet në struktura, tokë apo infrastrukturë me kalimin e kohës.</p>
+        </div>
+        <div class="service-card">
+          <h3>Sondazhe për Inxhinieri dhe Infrastrukturë</h3>
+          <p>Sondazhe për Rrugë: Planifikojmë dhe hartojmë rrugët për rrugë automobilistike, gazsjellës apo linja të tjera.</p>
+          <p>Sondazhe Hidrografike: Hartojmë veçoritë nënujore për ura, diga, porte ose menaxhim të përmbytjeve.</p>
+          <p>Sondazhe për Infrastrukturë Nëntokësore: Lokalizojmë dhe hartojmë tubacionet, kabllot dhe kanalet nëntokësore.</p>
+        </div>
+        <div class="service-card">
+          <h3>Sondazhe Mjedisore dhe Gjeologjike</h3>
+          <p>Sondazhe për Zonat e Përmbytjeve: Përcaktojmë nëse një pronë ndodhet brenda një zone të përmbytshme.</p>
+          <p>Matje për Kontrollin e Erozionit: Identifikojmë zonat e prirura për erozion dhe rekomandojmë masa mbrojtëse.</p>
+          <p>Sondazhe për Miniera dhe Karriera: Hartojmë dhe monitorojmë operacionet ose burimet minerare.</p>
+        </div>
+        <div class="service-card">
+          <h3>Sondazhe të Specializuara dhe të Avancuara</h3>
+          <p>Skanim 3D me Laser: Kapim modele të detajuara 3D të strukturave ose vendeve për projektim, analizë ose ruajtje historike.</p>
+          <p>Sondazhe Ajrore (Me Dron): Sigurojmë imazhe dhe harta ajrore për zona të mëdha ose të vështira për t’u arritur.</p>
+          <p>Sondazhe Gjeodezike: Masim prona në shkallë të madhe, shpesh për qëllime qeveritare ose shkencore.</p>
+        </div>
+        <div class="service-card">
+          <h3>Mbështetje për Pasuri të Paluajtshme dhe Zhvillim</h3>
+          <p>Studime të Fizibilitetit të Vendit: Vlerësojmë tokën për përshtatshmëri zhvillimi.</p>
+          <p>Planifikim i Parcelave: Ndihmojmë në ndarjen dhe planifikimin e tokës për zhvillim rezidencial ose komercial.</p>
+          <p>Vlerësime Pronësore: Sigurojmë të dhëna për të përcaktuar vlerën e pronës.</p>
+        </div>
+        <div class="service-card">
+          <h3>Shërbime Ligjore dhe të Përputhshmërisë</h3>
+          <p>Zgjidhje e Mosmarrëveshjeve Kufitare: Ofrimi i dëshmive ose ekspertizës në raste ligjore që përfshijnë kufijtë e pronave.</p>
+          <p>Matje për Servitute: Përcaktojmë dhe hartojmë zonat e servituteve për instalime ose të drejtat e aksesit.</p>
+          <p>Sondazhe për Leje Ndërtimi: Sigurojmë dokumentacionin dhe matjet e nevojshme për leje dhe përputhshmëri me rregulloret.</p>
+        </div>
+        <div class="service-card">
+          <h3>Hartim dhe Shërbime të Të Dhënave</h3>
+          <p>Hartim GIS: Krijojmë harta për Sistemet Gjeografike të Informacionit për analiza dhe planifikim.</p>
+          <p>Hartim Kadastral: Dokumentojmë kufijtë e pronave për regjistrime publike.</p>
+          <p>Ortofotografi: Gjenerojmë fotografi ajrore të korrigjuara për hartim të saktë.</p>
+        </div>
+      </div></div>
     </div>
     <div id="contact" class="container">
-      <h2>Kontakto</h2>
+      <h1>Kontakto</h1>
       <p>Informacion për kontakt...</p>
     </div>
     <footer>
