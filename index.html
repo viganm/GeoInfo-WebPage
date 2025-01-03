@@ -103,7 +103,7 @@
         <p>Partneri juaj i Besueshëm ne Inxhinieri.</p>
       </div>
     </div>
-    <div id="about" class="container" style="padding-top: 10%;">
+    <div id="about" class="container" style="padding-top: 5%;">
       <hr />
       <h1>Rreth Nesh</h1>
       <div class="slideshow">
@@ -208,7 +208,7 @@
         }
       </script>
     </div>
-    <div id="services" class="container" style="padding-top: 10%;">
+    <div id="services" class="container" style="padding-top: 5%;">
       <hr />
       <h1>Shërbimet Tona</h1>
       <style>
@@ -295,12 +295,45 @@
         </div>
       </div></div>
     </div>
-    <div id="contact" class="container">
+    <div id="contact" class="container" style="padding-top: 5%; padding-bottom: 5%;">
+      <hr />
       <h1>Kontakto</h1>
       <p>Informacion për kontakt...</p>
+    <form id="contact-form" style="display: flex; flex-direction: column; gap: 1rem; max-width: 600px; margin: auto;">
+      <label for="name" style="font-size: 1.2rem;">Emri:</label>
+      <input type="text" id="name" name="name" required style="padding: 0.5rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 5px;" />
+      
+      <label for="email" style="font-size: 1.2rem;">Email:</label>
+      <input type="email" id="email" name="email" required style="padding: 0.5rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 5px;" />
+      
+      <label for="message" style="font-size: 1.2rem;">Mesazhi:</label>
+      <textarea id="message" name="message" required style="padding: 0.5rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 5px; height: 150px;"></textarea>
+      
+      <button type="submit" style="padding: 0.75rem; font-size: 1.2rem; background-color: #333; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Dërgo</button>
+    </form>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function() {
+      emailjs.init("YOUR_USER_ID");
+      })();
+
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+        .then(function() {
+        alert('Mesazhi u dërgua me sukses!');
+        }, function(error) {
+        alert('Dërgimi i mesazhit dështoi...', error);
+        });
+      });
+    </script>
     </div>
     <footer>
       <p>&copy; 2025 GeoInfo Sh.P.K. All rights reserved.</p>
+      <p>Phone: <a href="tel:+38343239065">+383 44 239 065</a></p>
+      <p>Email: <a href="mailto:info@geoinfo.com">info@geoinfo.com</a></p>
     </footer>
   </body>
 </html>
